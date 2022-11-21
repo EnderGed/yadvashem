@@ -8,6 +8,7 @@ from multiprocessing import Pool
 # enter path where you want to save downloaded books
 # BASE_PATH = Path('/Users/enderged/own-projects/yadvashem/')
 BASE_PATH = Path('/Volumes/archiwa/yadvashem/')
+INPUT_IDS = 'all_ids.json'
 
 
 def download_and_save(url, destination):
@@ -101,7 +102,7 @@ def get_all_title_and_image_lists(ids):
 
 
 if __name__ == '__main__':
-    with open('all_ids.json', 'r') as f:
+    with open(INPUT_IDS, 'r') as f:
         all_ids = json.load(f)
 
     for book_id in all_ids[385:]:
